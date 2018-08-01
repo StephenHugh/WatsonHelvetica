@@ -6,7 +6,7 @@ A simple Unity demo to transform speech to 3D text, based on [IBM watson SDK](ht
 - Visual Studio Tools for Unity 2015
 ## Transplant
 ### direct test
-just open project in unity 3d and choose this folder,  run scene Example** in `Assets\watsonHelvetica`, say something
+just open project in unity 3d and choose this folder,  run scene **Example** in `Assets\watsonHelvetica`, say something
 
 ### use in  your own scene - to be developed
 
