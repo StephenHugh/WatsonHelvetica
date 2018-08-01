@@ -8,7 +8,7 @@ A simple Unity demo to transform speech to 3D text, based on [IBM watson SDK](ht
 ### direct test
 just open project in unity 3d and choose this folder,  run scene Example** in `Assets\watsonHelvetica`, say something
 
-### use in  your own scene
+### use in  your own scene - to be developed
 
 1. create your own scene and add watson SDK to your assets
 2. copy foler`\Assets\watsonHelvetica` to the assets folder of your own project  
