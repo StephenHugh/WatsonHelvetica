@@ -311,7 +311,7 @@ MonoBehaviour:
   CollisionDetection: 0
   FreezePositionX: 0
   FreezePositionY: 0
-  FreezePositionZ: 0
+  FreezePositionZ: 1
   FreezeRotationX: 0
   FreezeRotationY: 0
   FreezeRotationZ: 0
@@ -785,6 +785,11 @@ Prefab:
         type: 2}
       propertyPath: Mass
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114233363246658880, guid: 190598bee52698f4a9101aa7fd9b38bb,
+        type: 2}
+      propertyPath: FreezePositionZ
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 190598bee52698f4a9101aa7fd9b38bb, type: 2}
