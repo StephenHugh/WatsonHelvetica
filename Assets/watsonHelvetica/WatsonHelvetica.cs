@@ -211,8 +211,8 @@ public class WatsonHelvetica : MonoBehaviour {
 
         //Debug.Log ("GenerateText Called");
 
-        ResetText(); //reset before generating new text
-
+        //ResetText(); //reset before generating new text
+        NewTextSet();
         //check all letters
         for (int ctr = 0; ctr <= text3DtoShow.Length - 1; ctr++)
         {
@@ -359,7 +359,14 @@ public class WatsonHelvetica : MonoBehaviour {
         }
 
     }
+    void NewTextSet()
+    {
+        _ObjScale = transform.localScale;
 
+        //reset position
+        _CharXLocation = 0f;
+        _CharYLocation = 0f;
+    }
     private IEnumerator CreateWatsonService()
     {
         //  Create credential and instantiate service
@@ -522,7 +529,8 @@ public class WatsonHelvetica : MonoBehaviour {
                     if (text != _prevSpeechText)
                     {
                         _prevSpeechText = text;
-                        _TextToShow = string.Format("{0} \n{1}",text, _TextToShow);
+                        _TextToShow = text;
+                        //_TextToShow = string.Format("{0} \n{1}",text, _TextToShow);
                     }
                 }
 
