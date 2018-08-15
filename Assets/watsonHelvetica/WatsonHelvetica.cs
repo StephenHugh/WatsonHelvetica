@@ -60,7 +60,7 @@ public class WatsonHelvetica : MonoBehaviour {
 
     #endregion
 
-    private string _PrevFrameText = "watson\nand \nhelvetica";
+    private string _PrevFrameText = "watson and helvetica\n";
     private float _PrevFrameCharacterSpacing = 4f;
     private float _PrevFrameLineSpacing = 25f;
     private float _PrevFrameSpaceWidth = 8f;
@@ -88,6 +88,8 @@ public class WatsonHelvetica : MonoBehaviour {
     public bool FreezeRotationX = false;
     public bool FreezeRotationY = false;
     public bool FreezeRotationZ = false;
+
+    private string _prevSpeechText;
     // Use this for initialization
     void Start () {
 
@@ -114,10 +116,10 @@ public class WatsonHelvetica : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        text3DtoShow = _TextToShow;
-        if(_TextToShow!=_PrevFrameText||_CharacterSpacing!=_PrevFrameCharacterSpacing||_LineSpacing!=_PrevFrameLineSpacing||_SpaceWidth!=_PrevFrameSpaceWidth)
+        text3DtoShow =  _TextToShow;
+        if(text3DtoShow != _PrevFrameText||_CharacterSpacing!=_PrevFrameCharacterSpacing||_LineSpacing!=_PrevFrameLineSpacing||_SpaceWidth!=_PrevFrameSpaceWidth)
         {
-            _PrevFrameText =_TextToShow;
+            _PrevFrameText = text3DtoShow;
             _PrevFrameCharacterSpacing = _CharacterSpacing;
             _PrevFrameLineSpacing = _LineSpacing;
             _PrevFrameSpaceWidth = _SpaceWidth;
@@ -517,7 +519,11 @@ public class WatsonHelvetica : MonoBehaviour {
                 {
                     string text = string.Format("{0}", alt.transcript);
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
-                    _TextToShow = text;
+                    if (text != _prevSpeechText)
+                    {
+                        _prevSpeechText = text;
+                        _TextToShow = string.Format("{0} \n{1}", _TextToShow, text);
+                    }
                 }
 
                 if (res.keywords_result != null && res.keywords_result.keyword != null)
