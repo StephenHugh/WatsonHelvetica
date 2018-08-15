@@ -522,7 +522,7 @@ public class WatsonHelvetica : MonoBehaviour {
                     if (text != _prevSpeechText)
                     {
                         _prevSpeechText = text;
-                        _TextToShow = string.Format("{0} \n{1}", _TextToShow, text);
+                        _TextToShow = string.Format("{0} \n{1}",text, _TextToShow);
                     }
                 }
 
